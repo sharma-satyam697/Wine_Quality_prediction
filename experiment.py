@@ -3,41 +3,38 @@ from box import ConfigBox
 from src.mlproject import logger
 import json
 from pathlib import  Path
-data1 = {
-    'name ' : ['satyam','mukesh','paramchand','suresh','pappu'],
-    'ages' : [34, 54,356,23,5,34]
-}
 
-def dump_json(path : Path, data : dict):
-    with open(path , 'w') as f:
-        json.dump(data,f, indent=10)
-    logger.info("Content has been dumped in json file , path is {}".format(path))
+from ensure import ensure_annotations
+from box import ConfigBox
+import yaml
+from box.exceptions import BoxValueError
 
+@ensure_annotations
+def read_yaml(path_to_yaml : Path) -> ConfigBox:
+    """
+    reads yaml file and returns
+    Args:
+        path_to_yaml (str): path like input
 
-path  = Path('templates/temp.json')
-
-def load_json(path : Path) -> ConfigBox:
+    Raises:
+        ValueError : if yaml file is empty
+        e : empty file
+    Retuns:
+        ConfigBox : configBox type
+    :param path_to_yaml:
+    :return:
     """
 
-    :param path: path to json file
-    :return: Configbox : data as class attributes instead of dic
-    """
-
-    with open(path) as f:
-        content = json.load(f)
-    logger.info('infor',content)
-    logger.info("Json file loaded successfully from : {}".format(path))
-    return content
-
-load_json(path)
-import  os
-def get_size(path : Path) -> str:
-    """
-    get size in kb
-    :param path: path to the file
-    :return: size in kb (str)
-    """
-    size_in_kb = (os.path.getsize(path))
-    return "{}kb".format(size_in_kb)
-
-print(get_size(Path('template.py')))
+    try:
+        with open(path_to_yaml) as yaml_file:
+            content = yaml.safe_load(yaml_file)
+            logger.info("yaml file : {} loaded successfully".format(yaml_file))
+            return ConfigBox(content)
+    except BoxValueError:
+        raise ValueError('yaml file is empty')
+    except Exception as e:
+        raise e
+    
+a = read_yaml(Path("temp.yaml"))
+logger.info('There is information for data validaiton{}'.format(a.data_validation.keys()))
+logger.info('There is an information for main file{}'.format(a.temp))
