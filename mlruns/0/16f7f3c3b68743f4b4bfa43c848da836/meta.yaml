@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/16f7f3c3b68743f4b4bfa43c848da836/artifacts
+end_time: 1695657364204
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 16f7f3c3b68743f4b4bfa43c848da836
+run_name: colorful-yak-996
+run_uuid: 16f7f3c3b68743f4b4bfa43c848da836
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1695657358670
+status: 4
+tags: []
+user_id: Dell

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/0f577e4a70ac46f7aa1abf6464cc3d10/artifacts
+end_time: 1695453917970
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 0f577e4a70ac46f7aa1abf6464cc3d10
+run_name: abrasive-quail-632
+run_uuid: 0f577e4a70ac46f7aa1abf6464cc3d10
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1695453913252
+status: 4
+tags: []
+user_id: Dell

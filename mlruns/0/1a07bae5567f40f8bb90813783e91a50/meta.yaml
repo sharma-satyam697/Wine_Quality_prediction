@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/1a07bae5567f40f8bb90813783e91a50/artifacts
+end_time: 1695657271418
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1a07bae5567f40f8bb90813783e91a50
+run_name: aged-crab-413
+run_uuid: 1a07bae5567f40f8bb90813783e91a50
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1695657265797
+status: 4
+tags: []
+user_id: Dell

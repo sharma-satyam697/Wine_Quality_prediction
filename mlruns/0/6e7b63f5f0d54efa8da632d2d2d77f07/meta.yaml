@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/6e7b63f5f0d54efa8da632d2d2d77f07/artifacts
+end_time: 1695657434880
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6e7b63f5f0d54efa8da632d2d2d77f07
+run_name: capricious-bug-731
+run_uuid: 6e7b63f5f0d54efa8da632d2d2d77f07
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1695657429056
+status: 4
+tags: []
+user_id: Dell

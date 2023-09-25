@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/d8bdd04818b84c118bdf94cde4f66be5/artifacts
+end_time: 1695454202835
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d8bdd04818b84c118bdf94cde4f66be5
+run_name: mercurial-bat-812
+run_uuid: d8bdd04818b84c118bdf94cde4f66be5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1695454197590
+status: 4
+tags: []
+user_id: Dell

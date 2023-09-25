@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/319516d042374aba8c60842ec56e7e4e/artifacts
+end_time: 1695454521149
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 319516d042374aba8c60842ec56e7e4e
+run_name: nebulous-toad-842
+run_uuid: 319516d042374aba8c60842ec56e7e4e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1695454515918
+status: 4
+tags: []
+user_id: Dell

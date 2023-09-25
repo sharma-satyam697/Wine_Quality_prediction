@@ -3,6 +3,7 @@ from src.mlproject.pipeline.prediction import PredictionPipeline
 from datetime import  datetime
 from src.mlproject import logger
 import numpy as np
+import os
 
 obj = PredictionPipeline()
 
@@ -13,6 +14,12 @@ app = Flask(__name__)
 @app.route('/', methods=['GET'])
 def home_page():
     return render_template('home.html' , current_time =datetime.utcnow())
+
+@app.route('/train', methods=['GET'])
+def training():
+    os.system('python main.py')
+    return 'Training successful'
+
 
 @app.route('/predict', methods = ['POST'])
 def predict():
@@ -36,7 +43,9 @@ def predict():
             user_input = np.array(user_input).reshape(1,11)
             logger.info(user_input.shape)
             result = obj.predict(user_input)
-            result = round(result[0],0)
+            result = result[0]
+            result = result * 10       # In percentage
+            result = round(result,2)
             logger.info('result variabel has stored the prediciton')
             return render_template('result.html',result= result)
     except Exception as e:

@@ -55,12 +55,11 @@ except Exception as e:
 STAGE_NAME = 'Model Evaluation'
 
 
-if __name__ == '__main__':
-    try :
-        logger.info(">>>>>Stage {} started".format(STAGE_NAME))
-        obj = ModelEvaluationTrainingPipeline()
-        obj.main()
-        logger.info(">>>> stage {} completed".format(STAGE_NAME))
-    except Exception as e:
-        raise e
+try :
+    logger.info(">>>>>Stage {} started".format(STAGE_NAME))
+    obj = ModelEvaluationTrainingPipeline()
+    obj.main()
+    logger.info(">>>> stage {} completed".format(STAGE_NAME))
+except Exception as e:
+    raise e
 

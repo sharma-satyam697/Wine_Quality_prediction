@@ -52,8 +52,11 @@ python app.py
 
 [dagshub](https://dagshub.com/)
 MLFLOW_TRACKING_URI=https://dagshub.com/codedestructed007/Ml_end_to_end_project.mlflow \
+
 MLFLOW_TRACKING_USERNAME=codedestructed007 \
+
 MLFLOW_TRACKING_PASSWORD=5780be4d27268796fc9f39b1b123b32d86ba1bac \
+
 python script.py
 
 8. Run this export as evn variable:
@@ -69,3 +72,27 @@ export MLFLOW_TRACKING_PASSWORD=5780be4d27268796fc9f39b1b123b32d86ba1bac
 
 [Documentation](https://mlflow.org/docs/latest/tracking.html)
 
+# AWS -CICD-Dployment-with-Github-Actions
+
+## 1.  Login to AWS console
+
+## 2. Create IAM user for deployment
+
+### steps
+
+1. EC2 access : It is virtual machine
+2. ECR : Elastic Container registry to save your docker image in aws
+
+#### About the Deployment
+
+1. Build docker image to the source code
+2. Push your docker image to ECR
+3. Launch your EC2
+4. pull your image from ECR in EC2
+5. Launch your docker image in EC2
+
+#### policy
+
+1. AmzonEC2ContainerRegistryFullAccess
+
+2. AmazonEC2FullAccess

@@ -57,11 +57,23 @@
         button:hover {
             background-color: #555;
         }
+
+        .train-button {
+            position: absolute;
+            top: 20px; 
+            right: 20px; 
+            padding: 20px;
+            cursor : pointer;
+            font-size: 30px;
+            text-align: center;
+        }
+
     </style>
 </head>
 <body>
     <header>
         <h1>Wine Prediction</h1>
+        
     </header>
     {{ current_time }}
     <script>
@@ -81,6 +93,14 @@
         // Call the function to start updating the time
         updateCurrentTime();
     </script>
+    
+    <div class="train-button">
+        <a href="/train" style="text-decoration: none;">
+            <button id="train-button">Train</button>
+        </a>
+    </div>
+
+
     <div class="container">
         <form id="winePredictionForm" action= '/predict' method = 'POST'>
 
@@ -117,10 +137,16 @@
             <label for="alcohol">Alcohol Content (%)</label>
             <input type="number" id="alcohol" name="alcohol" required>
 
+            
+
             <button type="submit" class="logout-button">Predict</button>
+
+
 
     
         </form>
+
+        
     </div>
 
    
