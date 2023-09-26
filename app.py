@@ -1,9 +1,10 @@
-from flask import Flask, redirect,render_template,request
+from flask import Flask, redirect,render_template,request , url_for
 from src.mlproject.pipeline.prediction import PredictionPipeline
 from datetime import  datetime
 from src.mlproject import logger
 import numpy as np
 import os
+import yaml
 
 obj = PredictionPipeline()
 
@@ -15,17 +16,44 @@ app = Flask(__name__)
 def home_page():
     return render_template('home.html' , current_time =datetime.utcnow())
 
-@app.route('/train', methods=['GET'])
+@app.route('/train', methods=['GET','POST'])
 def training():
     os.system('python main.py')
     return 'Training successful'
+
+
+
+@app.route('/process_parameters', methods=['GET','POST'])
+def Change_parameters():
+    try:
+        if request.method == 'POST':
+            alpha = float(request.form['alpha'])
+            l1_ratio = float(request.form['l1_ratio'])
+
+             # Read the existing params.yaml file
+            with open('params.yaml', 'r') as yaml_file:
+                params = yaml.safe_load(yaml_file)
+
+            # Update the specific values in the params dictionary
+            params['ElasticNet']['alpha'] = alpha
+            params['ElasticNet']['l1_ratio'] = l1_ratio
+
+            # Write the updated params dictionary back to params.yaml
+            with open('params.yaml', 'w') as yaml_file:
+                yaml.dump(params, yaml_file, default_flow_style=False)
+
+            # Redirect to the home page after updating parameters
+            return redirect(url_for('training'))  # You can render the form again for GET requests
+        return render_template('parameters.html')
+
+    except Exception as e:
+        return str(e)
 
 
 @app.route('/predict', methods = ['POST'])
 def predict():
     try:            
         if request.method == 'POST':
-            logger.info('this post request has been activated')
             ## data accessig
             fixed_acidity = float(request.form['fixed_acid'])
             volatile_acidity = float(request.form['volatile_acid'])
