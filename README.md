@@ -1,103 +1,127 @@
-# Ml_end_to_end_project
-Machine Learning end to end project with mlops
+# Ml_end_to_end_project 🚀
+
+Welcome to the Machine Learning End-to-End Project with MLOps! In this project, you'll find a comprehensive guide on how to set up, run, and deploy your machine learning model.
+
+## Table of Contents
+
+1. [Workflows](#workflows)
+2. [How to Run](#how-to-run)
+3. [Mlflow](#mlflow)
+4. [Dagshub](#dagshub)
+5. [AWS - CI/CD Deployment with GitHub Actions](#aws-cicd-deployment-with-github-actions)
+
+----
+
+## Workflows 📝 
+ 1. **Update `config.yaml`**
+   - Create one stage and go update the config.yaml file.
+   - Repeat this step for each stage.
+   - These stages represent the full end-to-end project.
+   - 1. Data Ingestion
+     2. Data Validation
+     3. Data Transformation
+     4. Model Training
+     5. Model Evaluation
+
+2. **Update `schema.yaml`**
+   - Guidelines for schema updates.
+
+3. **Update `params.yaml`**
+   - Since this project is integrated with MLOps (Dagshub), keep changing the parameters stored in the params.yaml file to track metrics in your MLOps.
+
+4. **Update Files in `src/mlproject/entity`**
+   - Create Data Ingestion.
+   - - Go to `.config_entity.py` and create the data class for the same.
+   - Repeat this for all the stages.
+
+5. **Update the Configuration Manager in `src/config`**
+   - Create methods for each stage.
+   - Before that, ensure you configure all the data classes in the Configuration class.
+
+6. **Update the `components/__init__.py` File in `src/mlproject`**
+   - Add paths for the YAML files.
+
+7. **Update the Pipeline in `src/mlproject`**
+   - Create pipelines for the respective stages in different files under the `pipeline` directory.
+
+8. **Update `main.py`**
+   - Store all the pipelines in the `main.py` file, which is the main file of the project.
+
+9. **Update `app.py`**
+   - Add functions to access user input via HTML pages and route them to functions in `app.py`.
+
+## How to Run? 🏃‍♀️
+
+Follow these steps to get started with the project:
+
+1. **Clone the Repository:**
+   - `git clone https://github.com/codedestructed007/Ml_end_to_end_project`
+
+2. **Create a Virtual Environment:**
+   - `python -m venv <environment_name>`
+
+3. **Activate the Environment:**
+   - `<path_to_environment>/Scripts/activate`
+   - Make sure you are in the root directory of your project.
+
+4. **Install Requirements:**
+   - `pip install -r requirements.txt`
+
+5. **Run `app.py` in Your Terminal:**
+   - `python app.py`
+
+6. **Open in Your Browser:**
+   Open your browser and navigate to `http://localhost:<port>`.
+
+### Mlflow 📊
+
+To access MLflow UI, run:
+```shell
+mlflow ui
 
 
-## Workflows
-1. Update config.yaml
-2. Update schema.yaml
-3. Update params.yaml
-4. Update the files under src/mlproject/entity
-5. Update the configuration manager in src config
-6. Update the components/__init__.py file under src/mlproject
-7. Update the pipeline under src/mlproject
-8. Update the main.py
-9. Update the app.py
+### Mlflow 📊
 
+To access MLflow UI, run:
+  - mlflow ui
 
+## Dagshub 🚀
+Explore your project on Dagshub:
 
-
-
-
-# How to run?
-
-## steps:
-
-1. Clone the repository
-https://github.com/codedestructed007/Ml_end_to_end_project
-
-2. Create an virtual environment after opening the repository
-
-command-
-
-python -m venv(environment name)
-
-3. Activate the environment 
-venv\Scripts\activate
-
-4. Install the requirements
-
-pip install -r requirements.txt
-
-5. run app.py file in your terminal
-
-python app.py
-
-6. Open in your browser with local host and port
-
-### Mlflow
-
-7. mlflow ui
-
-### dagshub
-
-[dagshub](https://dagshub.com/)
 MLFLOW_TRACKING_URI=https://dagshub.com/codedestructed007/Ml_end_to_end_project.mlflow \
-
 MLFLOW_TRACKING_USERNAME=codedestructed007 \
-
 MLFLOW_TRACKING_PASSWORD=5780be4d27268796fc9f39b1b123b32d86ba1bac \
-
 python script.py
 
-8. Run this export as evn variable:
-
+Run this export as an environment variable:
 export MLFLOW_TRACKING_URI=https://dagshub.com/codedestructed007/Ml_end_to_end_project.mlflow
-
 export MLFLOW_TRACKING_USERNAME=codedestructed007
-
 export MLFLOW_TRACKING_PASSWORD=5780be4d27268796fc9f39b1b123b32d86ba1bac
-
-
-
 
 
 [Documentation](https://mlflow.org/docs/latest/tracking.html)
 
-# AWS -CICD-Dployment-with-Github-Actions
+## AWS - CI/CD Deployment with GitHub Actions ☁️
 
-## 1.  Login to AWS console
+### Deployment to AWS
 
-## 2. Create IAM user for deployment
+1. Log in to AWS Console
+2. Create IAM User for Deployment
 
-### steps
+### Steps
+Steps:
+Grant EC2 Access: Create a virtual machine (EC2).
+Set Up ECR: Use Elastic Container Registry to save your Docker image in AWS
 
-1. EC2 access : It is virtual machine
-2. ECR : Elastic Container registry to save your docker image in aws
+## About the Deployment Process
+1. Build Docker Image from the Source Code.
+2. Push Your Docker Image to ECR.
+3. Launch an EC2 Instance.
+4. Pull Your Image from ECR to EC2.
+5. Run Your Docker Image in EC
 
-#### About the Deployment
-
-1. Build docker image to the source code
-2. Push your docker image to ECR
-3. Launch your EC2
-4. pull your image from ECR in EC2
-5. Launch your docker image in EC2
-
-#### policy
-
-1. AmzonEC2ContainerRegistryFullAccess
-
-2. AmazonEC2FullAccess
-
-
+#### Required Policies
+1. AmazonEC2ContainerRegistryFullAccess.
+2. AmazonEC2FullAccess.
 
 
