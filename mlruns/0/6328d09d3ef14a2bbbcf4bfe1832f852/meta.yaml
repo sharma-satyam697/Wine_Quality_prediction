@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/6328d09d3ef14a2bbbcf4bfe1832f852/artifacts
+end_time: 1695659121066
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6328d09d3ef14a2bbbcf4bfe1832f852
+run_name: wise-robin-56
+run_uuid: 6328d09d3ef14a2bbbcf4bfe1832f852
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1695659114770
+status: 4
+tags: []
+user_id: Dell

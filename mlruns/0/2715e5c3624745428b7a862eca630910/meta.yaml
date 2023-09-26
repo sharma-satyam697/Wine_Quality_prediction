@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/2715e5c3624745428b7a862eca630910/artifacts
+end_time: 1695658040288
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2715e5c3624745428b7a862eca630910
+run_name: smiling-rat-302
+run_uuid: 2715e5c3624745428b7a862eca630910
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1695658035038
+status: 4
+tags: []
+user_id: Dell

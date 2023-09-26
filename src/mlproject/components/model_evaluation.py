@@ -9,6 +9,7 @@ import numpy as np
 import joblib
 
 
+
 class ModelEvaluation:
     def __init__(self,config : ModelEvaluationConfig):
         self.config = config
@@ -23,6 +24,7 @@ class ModelEvaluation:
         test_data = pd.read_csv(self.config.test_data_path)
         model = joblib.load(self.config.model_path)
         
+ 
         x_test = test_data.drop(self.config.target_column,axis=1)
         y_test = test_data[[self.config.target_column]]
         
@@ -44,12 +46,10 @@ class ModelEvaluation:
             mlflow.log_metric('mae', mae)
             mlflow.log_metric('mse', mse)
             
-            if tracking_url_type_store != 'file':
-                
-                mlflow.sklearn.log_model(model,'model',registered_model_name='ElasticNet')
+            if tracking_url_type_store in ('https', 'http'):
+                mlflow.sklearn.log_model(model, 'model', registered_model_name='ElasticNet')
             else:
-                mlflow.sklearn.log_model(model ,'model')
-                
-            
+                mlflow.sklearn.log_model(model, 'model')
+
             
     

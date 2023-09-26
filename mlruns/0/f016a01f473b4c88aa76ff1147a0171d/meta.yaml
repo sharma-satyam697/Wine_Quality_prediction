@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/f016a01f473b4c88aa76ff1147a0171d/artifacts
+end_time: 1695697014212
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f016a01f473b4c88aa76ff1147a0171d
+run_name: dashing-snake-8
+run_uuid: f016a01f473b4c88aa76ff1147a0171d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1695697008693
+status: 4
+tags: []
+user_id: Dell

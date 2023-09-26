@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/8825801dda724202988bc9d7a3e7af83/artifacts
+end_time: 1695705217876
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8825801dda724202988bc9d7a3e7af83
+run_name: overjoyed-stork-779
+run_uuid: 8825801dda724202988bc9d7a3e7af83
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1695705212518
+status: 4
+tags: []
+user_id: Dell

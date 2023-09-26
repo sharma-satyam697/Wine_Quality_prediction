@@ -70,6 +70,7 @@ export MLFLOW_TRACKING_PASSWORD=5780be4d27268796fc9f39b1b123b32d86ba1bac
 
 
 
+
 [Documentation](https://mlflow.org/docs/latest/tracking.html)
 
 # AWS -CICD-Dployment-with-Github-Actions
@@ -96,3 +97,7 @@ export MLFLOW_TRACKING_PASSWORD=5780be4d27268796fc9f39b1b123b32d86ba1bac
 1. AmzonEC2ContainerRegistryFullAccess
 
 2. AmazonEC2FullAccess
+
+
+
+

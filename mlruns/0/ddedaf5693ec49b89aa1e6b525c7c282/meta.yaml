@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/ddedaf5693ec49b89aa1e6b525c7c282/artifacts
+end_time: 1695658889476
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ddedaf5693ec49b89aa1e6b525c7c282
+run_name: defiant-bug-228
+run_uuid: ddedaf5693ec49b89aa1e6b525c7c282
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1695658884371
+status: 4
+tags: []
+user_id: Dell
