@@ -67,13 +67,23 @@
             font-size: 30px;
             text-align: center;
         }
+        .range-message {
+            font-size: 14px;
+            color: #888;
+            margin-top: 5px;
+        }
+        .title-message {
+            font-size: 16px;
+            color: #555;
+            margin-top: 10px;
+        }
 
     </style>
 </head>
 <body>
     <header>
         <h1>Wine Prediction</h1>
-        
+        <p class="title-message">Respect our preferable set values for accurate predictions.</p>
     </header>
     {{ current_time }}
     <script>
@@ -102,7 +112,7 @@
             <button id="track-button">Track your Model</button>
         </a>
         <a href="/train" style="text-decoration: none;">
-            <button id="train-button">Train</button>
+            <button id="train-button">Train again</button>
         </a>
     </div>
 
@@ -110,51 +120,54 @@
     <div class="container">
         <form id="winePredictionForm" action= '/predict' method = 'POST'>
 
-            <label for="fixed_acidity">Fixed Acidity</label>
-            <input type="number" id="fixed_acidity" name="fixed_acid" required>
-
-            <label for="volatile_acidity">Volatile Acidity</label>
-            <input type="number" id="volatile_acidity" name="volatile_acid" required>
-
-            <label for="citric_acid">Citric Acid</label>
-            <input type="number" id="citric_acid" name="citric_acid" required>
-
-            <label for="residual_sugar">Residual Sugar (g/L)</label>
-            <input type="number" id="residual_sugar" name="sugar" step="0.01" required>
-
-            <label for="chlorides">Chlorides</label>
-            <input type="number" id="chlorides" name="chlorides" required>
-
-            <label for="free_sulfur">Free Sulfur</label>
-            <input type="number" id="free_sulfur" name="free_sulfur" required>
-
-            <label for="total_sulfur">Total Sulfur</label>
-            <input type="number" id="total_sulfur" name="total_sulfur" required>
-
-            <label for="density">Density</label>
-            <input type="number" id="density" name="density" required>
-
-            <label for="pH">pH Level</label>
-            <input type="number" id="pH" name="ph" step="0.01" required>
-
-            <label for="sulphates">Sulphates</label>
-            <input type="number" id="sulphates" name="sulphates" required>
-
-            <label for="alcohol">Alcohol Content (%)</label>
-            <input type="number" id="alcohol" name="alcohol" required>
-
+            <label for="fixed_acidity">Fixed Acidity:</label>
+            <input type="number" id="fixed_acidity" name="fixed_acid" step="0.01" min="3.52" max="17.04" required>
+            <p class="range-message">Valid range: 3.52 to 17.04</p>
             
+            <label for="volatile_acidity">Volatile Acidity:</label>
+            <input type="number" id="volatile_acidity" name="volatile_acid" step="0.01" min="0.06" max="0.83" required>
+            <p class="range-message">Valid range: 0.06 to 0.83</p>
 
+            <label for="citric_acid">Citric Acid:</label>
+            <input type="number" id="citric_acid" name="citric_acid" step="0.01" min="0.0" max="1.2" required>
+            <p class="range-message">Valid range: 0.0 to 1.2</p>
+
+            <label for="residual_sugar">Residual Sugar (g/L):</label>
+            <input type="number" id="residual_sugar" name="sugar" step="0.01" min="0.48" max="37.92" required>
+            <p class="range-message">Valid range: 0.48 to 37.92</p>
+
+            <label for="chlorides">Chlorides:</label>
+            <input type="number" id="chlorides" name="chlorides" step="0.01" min="0.01" max="0.36" required>
+            <p class="range-message">Valid range: 0.01 to 0.36</p>
+
+            <label for="free_sulfur">Free Sulfur:</label>
+            <input type="number" id="free_sulfur" name="free_sulfur" step="0.01" min="2.4" max="157.2" required>
+            <p class="range-message">Valid range: 2.4 to 157.2</p>
+
+            <label for="total_sulfur">Total Sulfur:</label>
+            <input type="number" id="total_sulfur" name="total_sulfur" step="0.01" min="15.2" max="439.8" required>
+            <p class="range-message">Valid range: 15.2 to 439.8</p>
+
+            <label for="density">Density:</label>
+            <input type="number" id="density" name="density" step="0.01" min="0.79" max="1.21" required>
+            <p class="range-message">Valid range: 0.79 to 1.21</p>
+
+            <label for="pH">pH Level:</label>
+            <input type="number" id="pH" name="ph" step="0.01" min="2.22" max="4.56" required>
+            <p class="range-message">Valid range: 2.22 to 4.56</p>
+
+            <label for="sulphates">Sulphates:</label>
+            <input type="number" id="sulphates" name="sulphates" step="0.01" min="0.22" max="5.3" required>
+            <p class="range-message">Valid range: 0.22 to 5.3</p>
+
+            <label for="alcohol">Alcohol Content (%):</label>
+            <input type="number" id="alcohol" name="alcohol" step="0.01" min="6.8" max="70.86" required>
+            <p class="range-message">Valid range: 6.8 to 70.86</p>
+
+            <!-- Include similar messages for other fields -->
+            
             <button type="submit" class="logout-button">Predict</button>
-
-
-
-    
         </form>
-
-        
     </div>
-
-   
 </body>
 </html>

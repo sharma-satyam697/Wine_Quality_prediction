@@ -19,7 +19,8 @@ def home_page():
 @app.route('/train', methods=['GET','POST'])
 def training():
     os.system('python main.py')
-    return 'Training successful'
+    return 'Training successful<br><form action="/" method="get"><button type="submit">Back to Prediction Page</button></form>'
+
 
 
 

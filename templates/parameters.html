@@ -1,22 +1,92 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Parameters Page</title>
+    <meta charset="UTF-8">
+    <title>Parameter Input</title>
+    <style>
+        /* Your existing CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
 </head>
 <body>
-    <h1>Parameter Input</h1>
-    <form action="/process_parameters" method="POST">
-        <label for="alpha">Alpha:</label>
-        <input type="number" id="alpha" name="alpha" step="0.01" min="0" max="1" required>
-        <br>
-        
-        <label for="l1_ratio">L1 Ratio:</label>
-        <input type="number" id="l1_ratio" name="l1_ratio" step="0.01" min="0" max="1" required>
-        <br>
+    <header>
+        <h1>Parameter Input</h1>
+    </header>
+    <div class="container">
+        <form action="/process_parameters" method="POST">
+            <label for="alpha">Alpha:</label>
+            <input type="number" id="alpha" name="alpha" step="0.01" min="0" max="1" required>
+            <br>
+            
+            <label for="l1_ratio">L1 Ratio:</label>
+            <input type="number" id="l1_ratio" name="l1_ratio" step="0.01" min="0" max="1" required>
+            <br>
 
-        <p>Please enter values between 0 and 1 (exclusive).</p>
-        
-        <button type="submit">Submit</button>
-    </form>
+            <p>Please enter values between 0 and 1 (exclusive).</p>
+            <p>
+            <p>
+                To know more about parameters for ElasticNet model,<a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html">click here</a> 
+            </p>
+            
+            </p>
+            <button type="submit">Train the model</button>
+        </form>
+    </div>
 </body>
 </html>
